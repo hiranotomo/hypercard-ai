@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Classic Mac fonts - fallback to system fonts if not available */
+@font-face {
+  font-family: 'Chicago';
+  src: url('/fonts/chicago.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geneva';
+  src: url('/fonts/geneva.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --mac-white: #ffffff;
+  --mac-black: #000000;
+  --mac-gray: #c0c0c0;
+  --mac-dark-gray: #808080;
+  --mac-light-gray: #e0e0e0;
+}
+
+body {
+  font-family: 'Chicago', 'Geneva', monospace;
+  background-color: var(--mac-gray);
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mac-window {
+  background-color: var(--mac-white);
+  border: 2px solid var(--mac-black);
+  box-shadow: 
+    2px 2px 0 var(--mac-black),
+    4px 4px 0 var(--mac-white),
+    6px 6px 0 var(--mac-black);
+}
+
+.mac-button {
+  background-color: var(--mac-white);
+  border: 2px solid var(--mac-black);
+  padding: 4px 8px;
+  font-family: 'Chicago', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 var(--mac-black);
+}
+
+.mac-button:active {
+  background-color: var(--mac-black);
+  color: var(--mac-white);
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+.mac-field {
+  background-color: var(--mac-white);
+  border: 1px solid var(--mac-black);
+  padding: 2px 4px;
+  font-family: 'Geneva', monospace;
+  font-size: 12px;
+}
+
+.mac-title-bar {
+  background: repeating-linear-gradient(
+    0deg,
+    var(--mac-black),
+    var(--mac-black) 1px,
+    var(--mac-white) 1px,
+    var(--mac-white) 2px
+  );
+  height: 18px;
+  border-bottom: 1px solid var(--mac-black);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.mac-close-box {
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--mac-black);
+  background-color: var(--mac-white);
+  margin-right: 4px;
+}
+
+.pixel-border {
+  border: 1px solid var(--mac-black);
+  image-rendering: pixelated;
+}
+
+.dithered {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 1px,
+      var(--mac-black) 1px,
+      var(--mac-black) 2px
+    );
+  background-size: 2px 2px;
+  opacity: 0.1;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .mac-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

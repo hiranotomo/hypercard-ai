@@ -1,0 +1,12 @@
+rules_version = '2';
+
+// Development rules - VERY PERMISSIVE
+// DO NOT USE IN PRODUCTION
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow all reads and writes for development
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
