@@ -1,6 +1,6 @@
 # HyperCard AI
 
-A tribute to Bill Atkinson (1951-2024) and his revolutionary HyperCard.
+A tribute to Bill Atkinson (1951-2025) and his revolutionary HyperCard.
 
 ## About
 
